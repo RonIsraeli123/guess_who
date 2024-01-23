@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   gameData: {
-    numPlayer: 2,
+    numPlayer: 4,
     numBalls: 3,
     gameWords: [],
   },

@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import { WordView } from './WordView'
 import { ResultPageConfigEnglish, ResultPageConfigHebrew } from '../../../config'
 import { SendSmsComponent, SearchBalls } from '.'
 
@@ -55,9 +54,9 @@ export const WordsTapPanel = (props) => {
                         <div key={index}>
                             <TabPanel key={index} value={props.value} index={index}>
                                 <div className='balls-section'>
-                                    <h2>{configText.BALLS_TITLE}</h2>
+                                    <h2>{configText.WORD_TITLE}</h2>
                                     {props.show &&
-                                        <div>{word}</div>
+                                        <div className='word'>{word}</div>
                                     }
                                     <Button variant="contained" onClick={() => { props.setShow(!props.show) }}>
                                         {props.show ? configText.BUTTON_HIDE_TEXT : configText.BUTTON_SHOW_TEXT}

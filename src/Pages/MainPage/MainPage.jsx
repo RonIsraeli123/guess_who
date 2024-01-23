@@ -23,7 +23,6 @@ export const MainPage = () => {
 
     return (
         <div className='ballsResult'>
-
             <Box sx={{ width: '100vw' }}>
                 <GameNavbar setShow={setShow} />
                 <PlayersTabPanel value={value} setValue={setValue} setShow={setShow} />

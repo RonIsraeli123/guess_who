@@ -13,7 +13,7 @@ import RouteButton from '../../General/RouteButton'
 import { LanguageSwitch } from './LanguageSwitch'
 
 import { HomeCardConfigHebrew, HomeCardConfigEnglish } from '../../../config'
-import GuestWho from "../../../images/guest-who.png"
+import GuessWho from "../../../images/guess-who.png"
 
 export const HomeCard = () => {
     const languageType = useSelector((state) => state.language.languageType);
@@ -27,8 +27,8 @@ export const HomeCard = () => {
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
-                        image={GuestWho}
+                        height="170"
+                        image={GuessWho}
                         alt="green iguana"
                     />
                     <CardContent>
@@ -42,7 +42,6 @@ export const HomeCard = () => {
                             <h3>{configText.SUBTITLE2}</h3>
                             <ul>
                                 <li>{configText.SUBTITLE2_POINT1}</li>
-                                <li>{configText.SUBTITLE2_POINT2}</li>
                             </ul>
 
                         </Typography>

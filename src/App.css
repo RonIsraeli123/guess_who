@@ -179,3 +179,10 @@ align-items: center;
 .form-input-balls{
   margin-right: 2.4em !important;
 }
+
+.word{
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+}

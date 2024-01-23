@@ -23,7 +23,6 @@ export const GameNavbar = (props) => {
     const configText = languageType === "hebrew" ? NavBarConfigHebrew : NavBarConfigEnglish
 
     const numPlayer = useSelector((state) => state.game.gameData['numPlayer']);
-    const numBalls = useSelector((state) => state.game.gameData['numBalls']);
 
     return (
         <div className='navbarEnd' >

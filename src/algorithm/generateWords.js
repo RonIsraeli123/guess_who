@@ -13,9 +13,10 @@ const shuffleFunc = (array) => {
 };
 
 const generateWords = (players) => {
-  goodGuys = 0;
-  badGuys = 0;
-  noWord = 0;
+  let goodGuys = 0;
+  let badGuys = 0;
+  // const noWordGuy = 1;
+
   // even players number
   if (players % 2 === 0) {
     goodGuys = players / 2;
@@ -24,16 +25,16 @@ const generateWords = (players) => {
   // odd players number
   else {
     goodGuys = Math.ceil(players / 2);
-    goodGuys = Math.ceil(players / 2) - 2;
+    badGuys = Math.ceil(players / 2) - 2;
   }
-  wordsPair = shuffleFunc(WORDS)[0];
-  goodWord = wordsPair[0];
-  badWord = wordsPair[1];
+  const wordsPair = shuffleFunc(WORDS)[0];
+  const goodWord = wordsPair[0];
+  const badWord = wordsPair[1];
 
   const goodArray = Array(goodGuys).fill(goodWord);
   const badArray = Array(badGuys).fill(badWord);
-  const noWord = [''];
-  let result = goodArray.concat(badArray).concat(noWord);
+  const noWordArray = ['אין מילה!'];
+  let result = goodArray.concat(badArray).concat(noWordArray);
 
   return shuffleFunc(result);
 };
