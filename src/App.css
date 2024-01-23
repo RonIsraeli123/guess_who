@@ -1,0 +1,181 @@
+html{
+  height: 100vh;
+    width: 100vw;
+    background-color: aliceblue;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hebrew{
+  direction: rtl !important;
+}
+
+.english{
+  direction: ltr !important;
+}
+
+.GameForm {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1em;
+    gap: 1em;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+.center_search_find{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+}
+
+.formLinks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.balls{
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  padding: 1em;
+}
+
+.outsideBall{
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+
+.ButtonNav{
+  display: flex;
+  border-radius: 30%,
+}
+
+.navbarEnd{
+display: flex;
+flex-wrap: nowrap;
+justify-content: center;
+gap: 0.5em;
+}
+
+.playerTabs{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+  
+.MuiTabs-flexContainer {
+display: flex !important;
+flex-wrap: wrap !important;
+}
+
+.ballsResult{
+  height: 80vh; /* Set the height of the container to the full height of the viewport */
+}
+
+.left-down{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.balls-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.share{
+  display: flex;
+  flex-direction: column;
+}
+.search-balls{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10em;
+  margin-bottom: 5em;
+  padding: 10px;
+}
+.send_sms{
+  border: 1px solid black;
+  padding: 1em;
+  border-radius: 2em;
+  margin: 1em;
+  margin-top: 6.5em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.search_ball{
+  margin-top: 12em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.PhoneInputInput{
+  border-radius: 0.4em;
+}
+.MuiStack-root{
+direction: rtl !important;
+}
+
+.translate-page{
+display: flex;
+
+justify-content: center;
+align-items: center;
+}
+
+.translate-component{
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.MuiInputLabel-root{
+  right: 0 !important;
+  text-align: "center" !important;
+  margin: 0 auto !important;
+  position: "absolute" !important;
+  margin-left: 2px !important;
+}
+
+.form-input-player{
+  margin-right: 2em !important;
+}
+.form-input-balls{
+  margin-right: 2.4em !important;
+}
