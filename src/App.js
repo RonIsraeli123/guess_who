@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-import { HomePage, FormPage, BallsResultPage } from './Pages';
+import { HomePage, FormPage, MainPage } from './Pages';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route path='/' exact element={<HomePage />} />
           <Route path='/Form' element={<FormPage />} />
-          <Route path='/MainPage' element={<BallsResultPage />} />
+          <Route path='/MainPage' element={<MainPage />} />
         </Routes>
       </div>
     </Router>

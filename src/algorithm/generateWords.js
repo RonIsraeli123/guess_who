@@ -1,28 +1,41 @@
-import { BALLS } from './config';
+const WORDS = [
+  ['aba', 'ama'],
+  ['netflix', 'youtube'],
+  ['stam', 'dvarim'],
+];
 
-const getRandomInt = (min, max) => {
-  return (
-    Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + min
-  );
+const shuffleFunc = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 };
 
-const generateWords = (players, sum_balls) => {
-  let results = [];
-  let array = Array.from(BALLS);
-  for (let player = 0; player < players; player++) {
-    let options = [];
-    for (let num = 0; num < sum_balls; num++) {
-      let index = getRandomInt(0, array.length - 1);
-      options.push(array[index]);
-      array.splice(index, 1);
-    }
-    results.push(
-      options.sort(function (a, b) {
-        return a[0] - b[0];
-      })
-    );
+const generateWords = (players) => {
+  goodGuys = 0;
+  badGuys = 0;
+  noWord = 0;
+  // even players number
+  if (players % 2 === 0) {
+    goodGuys = players / 2;
+    badGuys = players / 2 - 1;
   }
-  return results;
+  // odd players number
+  else {
+    goodGuys = Math.ceil(players / 2);
+    goodGuys = Math.ceil(players / 2) - 2;
+  }
+  wordsPair = shuffleFunc(WORDS)[0];
+  goodWord = wordsPair[0];
+  badWord = wordsPair[1];
+
+  const goodArray = Array(goodGuys).fill(goodWord);
+  const badArray = Array(badGuys).fill(badWord);
+  const noWord = [''];
+  let result = goodArray.concat(badArray).concat(noWord);
+
+  return shuffleFunc(result);
 };
 
 export default generateWords;

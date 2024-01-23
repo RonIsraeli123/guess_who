@@ -21,7 +21,7 @@ export const PlayersTabPanel = (props) => {
 
   const configText = languageType === "hebrew" ? ResultPageConfigHebrew : ResultPageConfigEnglish
 
-  const playerBallsResult = useSelector((state) => state.game.gameData['playerBallsResult']);
+  const gameWords = useSelector((state) => state.game.gameData['gameWords']);
 
   const handleChange = (event, newValue) => {
     props.setValue(newValue);
@@ -31,7 +31,7 @@ export const PlayersTabPanel = (props) => {
     <div className='playerTabs'>
       <Tabs value={props.value} onChange={handleChange}>
         {
-          playerBallsResult.map((item, index) => {
+          gameWords.map((item, index) => {
             return <Tab key={index} label={`${configText.PLAYER_TITLE} ${index + 1} `} {...a11yProps(index)} />
           })
         }

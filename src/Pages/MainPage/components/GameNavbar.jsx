@@ -11,8 +11,8 @@ import Button from '@mui/material/Button';
 
 import { NavBarConfigEnglish, NavBarConfigHebrew } from '../../../config'
 
-import { setGameVars } from '../../../redux/slices/gameSlice';
-import generateBalls from '../../../algorithm/generateWords'
+import { setGameWords } from '../../../redux/slices/gameSlice';
+import generateWords from '../../../algorithm/generateWords'
 
 export const GameNavbar = (props) => {
     const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export const GameNavbar = (props) => {
                 {configText.GO_BACK}
                 <CompareArrowsIcon />
             </Button>
-            <Button className='ButtonNav' variant="outlined" onClick={() => { dispatch(setGameVars((generateBalls(numPlayer, numBalls)))); props.setShow(false) }}>
+            <Button className='ButtonNav' variant="outlined" onClick={() => { dispatch(setGameWords((generateWords(numPlayer)))); props.setShow(false) }}>
                 {configText.RESHUFFLE}
                 <RefreshIcon />
             </Button >

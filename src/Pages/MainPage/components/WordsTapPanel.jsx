@@ -7,9 +7,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
-import { BallsView } from './BallsView'
+import { WordView } from './WordView'
 import { ResultPageConfigEnglish, ResultPageConfigHebrew } from '../../../config'
-import { SendSmsComponent, SearchBalls } from '../components'
+import { SendSmsComponent, SearchBalls } from '.'
 
 import 'react-phone-number-input/style.css'
 
@@ -40,24 +40,24 @@ TabPanel.propTypes = {
 };
 
 
-export const BallsTapPanel = (props) => {
+export const WordsTapPanel = (props) => {
     const languageType = useSelector((state) => state.language.languageType);
 
     const configText = languageType === "hebrew" ? ResultPageConfigHebrew : ResultPageConfigEnglish
 
-    const playerBallsResult = useSelector((state) => state.game.gameData['playerBallsResult']);
+    const gameWords = useSelector((state) => state.game.gameData['gameWords']);
 
     return (
         <div>
             {
-                playerBallsResult.map((item, index) => {
+                gameWords.map((word, index) => {
                     return (
                         <div key={index}>
                             <TabPanel key={index} value={props.value} index={index}>
                                 <div className='balls-section'>
                                     <h2>{configText.BALLS_TITLE}</h2>
                                     {props.show &&
-                                        <BallsView item={item} show={props.show} index={index} setShow={props.setShow} />
+                                        <div>{word}</div>
                                     }
                                     <Button variant="contained" onClick={() => { props.setShow(!props.show) }}>
                                         {props.show ? configText.BUTTON_HIDE_TEXT : configText.BUTTON_SHOW_TEXT}
@@ -70,7 +70,6 @@ export const BallsTapPanel = (props) => {
 
                         </div>
                     )
-
                 })
             }
         </div>

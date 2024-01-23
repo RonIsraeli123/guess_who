@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Box from '@mui/material/Box';
 
-import generateBalls from '../../algorithm/generateWords'
-import { setGameVars } from '../../redux/slices/gameSlice';
-import { GameNavbar, PlayersTabPanel, BallsTapPanel } from './components'
+import generateWords from '../../algorithm/generateWords'
+import { setGameWords } from '../../redux/slices/gameSlice';
+import { GameNavbar, PlayersTabPanel, WordsTapPanel } from './components'
 
 
 export const MainPage = () => {
@@ -15,7 +15,7 @@ export const MainPage = () => {
     const numPlayer = useSelector((state) => state.game.gameData['numPlayer']);
 
     useEffect(() => {
-        dispatch(setGameVars(generateWords(numPlayer)));
+        dispatch(setGameWords(generateWords(numPlayer)));
     }, [dispatch, numPlayer]);
 
     const [show, setShow] = useState(false)
@@ -27,7 +27,7 @@ export const MainPage = () => {
             <Box sx={{ width: '100vw' }}>
                 <GameNavbar setShow={setShow} />
                 <PlayersTabPanel value={value} setValue={setValue} setShow={setShow} />
-                <BallsTapPanel value={value} show={show} setShow={setShow} />
+                <WordsTapPanel value={value} show={show} setShow={setShow} />
             </Box >
         </div>
     );
