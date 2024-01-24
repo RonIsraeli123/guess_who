@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 
 import { NavBarConfigEnglish, NavBarConfigHebrew } from '../../../config'
 
-import { setGameWords } from '../../../redux/slices/gameSlice';
+import { setGameWords, setOption } from '../../../redux/slices/gameSlice';
 import generateWords from '../../../algorithm/generateWords'
 
 export const GameNavbar = (props) => {
@@ -23,14 +23,22 @@ export const GameNavbar = (props) => {
     const configText = languageType === "hebrew" ? NavBarConfigHebrew : NavBarConfigEnglish
 
     const numPlayer = useSelector((state) => state.game.gameData['numPlayer']);
+    const generateWordsAgain = () => {
+        const result = generateWords(numPlayer, languageType)
+        const wordsResult = result["wordsResult"]
+        const option = result["option"]
+        dispatch(setGameWords(wordsResult));
+        dispatch(setOption(option));
+        props.setShow(false)
 
+    }
     return (
         <div className='navbarEnd' >
             <Button className='ButtonNav' variant="outlined" onClick={() => { navigate('/Form') }}>
                 {configText.GO_BACK}
                 <CompareArrowsIcon />
             </Button>
-            <Button className='ButtonNav' variant="outlined" onClick={() => { dispatch(setGameWords((generateWords(numPlayer)))); props.setShow(false) }}>
+            <Button className='ButtonNav' variant="outlined" onClick={() => generateWordsAgain()}>
                 {configText.RESHUFFLE}
                 <RefreshIcon />
             </Button >

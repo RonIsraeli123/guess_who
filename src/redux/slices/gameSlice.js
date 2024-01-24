@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   gameData: {
     numPlayer: 4,
-    numBalls: 3,
     gameWords: [],
+    option: {},
   },
 };
 
@@ -13,24 +13,18 @@ export const gameDataSlice = createSlice({
   initialState,
   reducers: {
     setNumPlayer: (state, action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
       state.gameData['numPlayer'] = action.payload;
     },
     setGameWords: (state, action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
       state.gameData['gameWords'] = action.payload;
+    },
+    setOption: (state, action) => {
+      state.gameData['option'] = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setNumPlayer, setNumBalls, setGameWords } =
-  gameDataSlice.actions;
+export const { setNumPlayer, setGameWords, setOption } = gameDataSlice.actions;
 
 export default gameDataSlice.reducer;

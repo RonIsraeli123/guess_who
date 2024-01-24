@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 import { ResultPageConfigEnglish, ResultPageConfigHebrew } from '../../../config'
-// import { SendSmsComponent, SearchBalls } from '.'
 
 import 'react-phone-number-input/style.css'
 
@@ -62,9 +61,6 @@ export const WordsTapPanel = (props) => {
                                         {props.show ? configText.BUTTON_HIDE_TEXT : configText.BUTTON_SHOW_TEXT}
                                     </Button>
                                 </div>
-                                {/* <Box className='center_search_find'>
-                                    {props.show ? < SendSmsComponent index={index} /> : <SearchBalls />}
-                                </Box> */}
                             </TabPanel>
                         </div>
                     )
