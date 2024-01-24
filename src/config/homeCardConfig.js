@@ -12,7 +12,7 @@ export const HomeCardConfigEnglish = {
 };
 
 export const HomeCardConfigHebrew = {
-  TITLE: 'משחק הרולטה - סנוקר',
+  TITLE: 'מי אני?',
 
   SUBTITLE2: 'איך משחקים את המשחק?',
   SUBTITLE2_POINT1: 'בחר מספר שחקנים',
