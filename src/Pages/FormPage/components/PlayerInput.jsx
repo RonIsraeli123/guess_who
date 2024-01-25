@@ -51,6 +51,11 @@ export const PlayerInput = () => {
         }
     }
 
+    const chipDeleted = (playerName) => {
+        setPlayerList(playerList.filter(item => item !== playerName));
+    }
+
+
     return (
         <div className='form'>
             <div>
@@ -77,7 +82,7 @@ export const PlayerInput = () => {
             </div>
             <div className="players-chip">
                 {playerList.map((playerName, index) => {
-                    return <div className="player-chip" key={index}><Chip color='success' label={`${index + 1}) ${playerName}`} /></div>
+                    return <div className="player-chip" key={index}><Chip onDelete={() => chipDeleted(playerName)} color='success' label={`${index + 1}) ${playerName}`} /></div>
                 })}
             </div>
             <div className="formLinks">

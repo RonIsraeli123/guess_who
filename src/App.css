@@ -196,6 +196,8 @@ align-items: center;
   width: 15em;
 }
 .player-chip{
-  margin: 0.2em;
-
+  margin: 0.4em;
+}
+.MuiSvgIcon-root{
+  padding-left:0.6em !important
 }
