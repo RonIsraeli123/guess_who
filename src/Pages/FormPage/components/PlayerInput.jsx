@@ -30,7 +30,6 @@ export const PlayerInput = () => {
 
     const handleClickAddPlayer = () => {
         if (playerNameInput === undefined || playerNameInput === '' || playerNameInput.trim === '') {
-            console.log("alert!")
             alert("name is invalid!")
         }
         else if (playerList.includes(playerNameInput)) {
@@ -38,6 +37,7 @@ export const PlayerInput = () => {
         }
         else {
             setPlayerList([...playerList, playerNameInput])
+            setPlayerNameInput('')
         }
     }
 
@@ -57,6 +57,7 @@ export const PlayerInput = () => {
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
                     <InputLabel htmlFor="standard-adornment-password">{languageType === 'hebrew' ? 'שחקנים' : "Players"}</InputLabel>
                     <Input
+                        value={playerNameInput}
                         id="standard-adornment-password"
                         type='text'
                         onChange={(e) => setPlayerNameInput(e.target.value)}
