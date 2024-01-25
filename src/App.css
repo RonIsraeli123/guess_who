@@ -186,3 +186,16 @@ align-items: center;
   padding: 1em;
   margin: 1em;
 }
+
+.players-chip{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 15em;
+}
+.player-chip{
+  margin: 0.2em;
+
+}

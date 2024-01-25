@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   gameData: {
-    numPlayer: 4,
+    players: ['1', '2', '3', '4'],
     gameWords: [],
     option: {},
   },
@@ -12,8 +12,8 @@ export const gameDataSlice = createSlice({
   name: 'userAppointmentInfo',
   initialState,
   reducers: {
-    setNumPlayer: (state, action) => {
-      state.gameData['numPlayer'] = action.payload;
+    setPlayers: (state, action) => {
+      state.gameData['players'] = action.payload;
     },
     setGameWords: (state, action) => {
       state.gameData['gameWords'] = action.payload;
@@ -25,6 +25,6 @@ export const gameDataSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setNumPlayer, setGameWords, setOption } = gameDataSlice.actions;
+export const { setPlayers, setGameWords, setOption } = gameDataSlice.actions;
 
 export default gameDataSlice.reducer;

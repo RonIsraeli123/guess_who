@@ -12,16 +12,16 @@ import { GameNavbar, PlayersTabPanel, WordsTapPanel, RevealPlayer } from './comp
 export const MainPage = () => {
     const dispatch = useDispatch();
 
-    const numPlayer = useSelector((state) => state.game.gameData['numPlayer']);
+    const players = useSelector((state) => state.game.gameData['players']);
     const languageType = useSelector((state) => state.language.languageType);
 
     useEffect(() => {
-        const result = generateWords(numPlayer, languageType)
+        const result = generateWords(players.length, languageType)
         const wordsResult = result["wordsResult"]
         const option = result["option"]
         dispatch(setGameWords(wordsResult));
         dispatch(setOption(option));
-    }, [dispatch, numPlayer, languageType]);
+    }, [dispatch, players, languageType]);
 
     const [show, setShow] = useState(false)
     const [value, setValue] = useState(0);

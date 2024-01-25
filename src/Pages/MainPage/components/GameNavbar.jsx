@@ -22,9 +22,9 @@ export const GameNavbar = (props) => {
 
     const configText = languageType === "hebrew" ? NavBarConfigHebrew : NavBarConfigEnglish
 
-    const numPlayer = useSelector((state) => state.game.gameData['numPlayer']);
+    const players = useSelector((state) => state.game.gameData['players']);
     const generateWordsAgain = () => {
-        const result = generateWords(numPlayer, languageType)
+        const result = generateWords(players.length, languageType)
         const wordsResult = result["wordsResult"]
         const option = result["option"]
         dispatch(setGameWords(wordsResult));
